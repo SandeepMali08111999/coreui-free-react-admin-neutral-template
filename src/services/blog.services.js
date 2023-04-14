@@ -44,9 +44,9 @@ export const allBlog = async () => {
     })
 }
 
-const singleBlog = async (id) => {
+export const singleBlog = async (id) => {
   return api
-    .get(`/${id}`, {})
+    .get(`/api/blog/${id}`, {})
     .then((response) => {
       return response
     })
@@ -55,7 +55,7 @@ const singleBlog = async (id) => {
     })
 }
 
-const updateBlog = async (
+export const updateBlog = async (
   id,
   title,
   author,
@@ -66,7 +66,7 @@ const updateBlog = async (
   read_time,
 ) => {
   return api
-    .put(`/update/${id}`, {
+    .put(`/api/blog/update/${id}`, {
       title,
       author,
       author_designation,
